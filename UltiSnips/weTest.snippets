@@ -1,0 +1,152 @@
+# Autoconverted from visual studio code
+
+snippet functional.command "functional command"
+commands:
+  - name:          command_name
+    message:       my_message
+    margin:        0 # %
+    delta:         0
+    setter:        USet
+    getter:        UMes
+    get_value:     20 # if setter and getter have different values
+    set_value:     20 # if setter and getter have different values
+    value:         20 # if setter and getter have the same value
+    delay:         0 # sec
+    ignore:        False True
+    skip:          False True
+    on_failure:    continue pause abort
+    retry:         5
+endsnippet
+
+snippet scenario.config "scenario config"
+config:
+  name:        ${1:my_scenario_name}
+  type:        ${2:unit} ${3:functional}
+  prefix:      ${4:CEA-01:}  # PV prefix
+  use_prefix:  ${5:False} ${6:True}
+  delay:       ${7:1} # sec
+  ignore:      ${8:False} ${9:True}
+  skip:        ${10:False} ${11:True}
+  on_failure:  ${12:continue} ${13:pause} ${14:abort}
+  retry:       ${15:5}
+endsnippet
+
+snippet scenario.include "scenario include"
+include:
+   # without macro
+   - myScript.yaml
+   # with macro on one line
+   - ['myScript.yaml', MACRO1: 'MY_MACRO1, MACRO2: 'MY_MACRO2']
+   # with macro on several lines
+   - path: myScript.yaml
+     MACRO1: 'MY_MACRO1'
+     MACRO2: 'MY_MACRO2'
+endsnippet
+
+snippet scenario.macros "scenario macros"
+macros:
+  - MACRO1: MY_MACRO1
+    MACRO2: MY_MACRO2
+endsnippet
+
+snippet scenario.name "scenario name"
+name: ${1:MY_SCENARIO_NAME}
+endsnippet
+
+snippet scenario.tests "scenario tests"
+tests:
+  - name:              my_sub_test
+    prefix:            CEA-01:...
+    use_prefix:        False True
+    delay:             1 # sec
+    message:           my_message
+    setter:            USet
+    getter:            UMes
+    margin:            0 # %
+    delta:             0
+
+    # choose between range, values and commands
+    # range
+    range:
+      start:           -5
+      stop:            10
+      # choose between step, lin and geom
+      step:            0.3
+      lin:             5 # number of values linearly spaced between start and stop
+      geom:            3 # number of values geometrically spaced between start and stop
+      include_start:   False True
+      include_stop:    False True
+      sort:            True False random reverse
+
+    # values (2 ways to define them)
+    # one line
+    values: [1, 10, 100]
+    # several lines
+    values:
+      - 1
+      - 10
+      - 100
+
+    # commands
+    commands:
+      # commande 1
+      - name:          command_name
+        message:       my_message
+        margin:        0 # %
+        delta:         0
+        setter:        USet
+        getter:        UMes
+        get_value:     20 # if setter and getter have different values
+        set_value:     20 # if setter and getter have different values
+        value:         20 # if setter and getter have the same value
+        delay:         0 # sec
+        ignore:        False True
+        skip:          False True
+        on_failure:    continue pause abort
+        retry:         5
+      # commande 2
+      - name: ... # command 2
+      # commande 3
+      - name: ... # command 3
+
+    finally:
+      setter:          USet
+      value:           0 # %
+    ignore:        False True
+    skip:          False True
+    on_failure:    continue pause abort
+    retry:         0
+endsnippet
+
+snippet scenario.version "scenario version"
+version: {major: ${1:1}, minor: ${2:2}, bugfix: ${3:0}}
+endsnippet
+
+snippet unit.limits "unit limits"
+  - name:      ${1:limits of power supply voltage}
+    setter:    ${2:USet}
+    getter:    ${3:UMes}
+    margin:    ${4:0} # %
+    commands:
+      - name:      ${5:min limit}
+        set_value: ${6:-1}
+        get_value: ${7:0}
+      - name:      ${8:max limit}
+        set_value: ${9:11}
+        get_value: ${10:10}
+    finally:
+      value:       ${11:0} # %
+endsnippet
+
+snippet unit.range "unit range"
+  - name:      ${1:range of power supply voltage}
+    setter:    ${2:USet}
+    getter:    ${3:UMes}
+    margin:    ${4:0} # %
+    range:
+      start:   ${5:0}
+      stop:    ${6:10}
+      step:    ${7:1}
+    finally:
+      value:   ${8:0} # %
+endsnippet

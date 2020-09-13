@@ -1,0 +1,26 @@
+# Autoconverted from visual studio code
+
+snippet pvAssign "SNL pvAssign"
+pvAssign(${1:pv_variable}, "${2:pv_name}")
+endsnippet
+
+snippet pvGet "SNL pvGet"
+pvGet(${1:pv_variable});
+endsnippet
+
+snippet pvPut "SNL pvPut"
+pvPut(${1:pv_variable});
+endsnippet
+
+snippet state "SNL state"
+ss ${1:state_machine_name} {
+    state ${2:state0} {
+        when (${3:condition0)} {
+        } state ${2:state0}
+    }
+    state ${4:state1} {
+        when (${5:condition1}) {
+        } state ${4:state1}
+    }
+}
+endsnippet

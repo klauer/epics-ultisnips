@@ -1,0 +1,88 @@
+priority -60
+
+
+global !p
+
+def camelize(string: str, uppercase_first_letter: bool = True) -> str:
+    # Borrowed from inflection
+    """
+    Convert strings to CamelCase.
+    Examples::
+        >>> camelize("device_type")
+        'DeviceType'
+        >>> camelize("device_type", False)
+        'deviceType'
+    :func:`camelize` can be thought of as a inverse of :func:`underscore`,
+    although there are some cases where that does not hold::
+        >>> camelize(underscore("IOError"))
+        'IoError'
+    :param uppercase_first_letter: if set to `True` :func:`camelize` converts
+        strings to UpperCamelCase. If set to `False` :func:`camelize` produces
+        lowerCamelCase. Defaults to `True`.
+    """
+    import re  # noqa
+    if uppercase_first_letter:
+        return re.sub(r"(?:^|_)(.)", lambda m: m.group(1).upper(), string)
+    return string[0].lower() + camelize(string)[1:]
+
+endglobal
+
+##############
+# CAPROTO    #
+##############
+
+snippet pvsi "pvproperty stringin" b
+${1:name} = pvproperty(
+    name='`!p snip.rv = camelize(t[1])`',
+    value=${3:''},
+    max_length=40,
+    read_only=True,
+    record='stringin',
+	doc='${4:}',
+)
+endsnippet
+
+snippet pvai "pvproperty ai" b
+${1:name} = pvproperty(
+    name='`!p snip.rv = camelize(t[1])`',
+    value=${3:0.0},
+    read_only=True,
+    record='ai',
+	units='${4:}',
+	doc='${5:}',
+)
+endsnippet
+
+snippet pvli "pvproperty longin" b
+${1:name} = pvproperty(
+    name='`!p snip.rv = camelize(t[1])`',
+    value=${3:0},
+    read_only=True,
+    record='longin',
+	units='${4:}',
+	doc='${5:}',
+)
+endsnippet
+
+snippet pvstartup "pvproperty startup" b
+@${1:name}.startup
+async def $1(self, instance: ChannelData, async_lib: AsyncLibraryLayer):
+	"""
+	Startup hook for $1.
+	"""
+	${0:...}
+endsnippet
+
+snippet pvscan "pvproperty scan" b
+@${1:name}.scan(period=${2:1.0}, stop_on_error=${3:False}, use_scan_field=${4:True})
+async def $1(self, instance: ChannelData, async_lib: AsyncLibraryLayer):
+	"""
+	Scan hook for $1.
+	"""
+	${0:...}
+endsnippet
+snippet pvput "pvproperty putter" b
+@${1:name}.putter
+async def $1(self, instance: ChannelData, value):
+	${0:...}
+endsnippet

@@ -1,0 +1,6 @@
+[submodule "vscode-epics"]
+	path = vscode-epics
+	url = https://github.com/NSenaud/vscode-epics/
+[submodule "vscode_to_ultisnips"]
+	path = vscode_to_ultisnips
+	url = https://github.com/klauer/vscode_to_ultisnips.git

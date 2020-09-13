@@ -1,0 +1,394 @@
+# Autoconverted from visual studio code
+
+snippet record.record "Record Body"
+record(${1:record_type}, "${2:record_name}") {
+    ${3}
+}${4}
+endsnippet
+
+snippet record.asub "aSub Record"
+record(aSub, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(SNAM, "${3:my_asub_routine}")
+    field(INPA, "${4:record_name}")
+    field(FTA,  "${5:STRING }${6:CHAR }${7:UCHAR }${8:SHORT }${9:USHORT }${10:LONG }${11:ULONG }${12:FLOAT }${13:DOUBLE }${14:ENUM}")
+    field(NOA,  "${15:number_of_element}")
+    field(OUTA, "${16:record_name}")
+    field(FTVA, "${17:STRING }${18:CHAR }${19:UCHAR }${20:SHORT }${21:USHORT }${22:LONG }${23:ULONG }${24:FLOAT }${25:DOUBLE }${26:ENUM}")
+    field(NOVA, "${27:number_of_element}")
+}${28}
+endsnippet
+
+snippet field.hyst "alarm deadband field"
+field(HYST, "${1:double}")${2}
+endsnippet
+
+snippet field.alarms "all alarms field"
+field(HIHI, "${1:float}")
+field(HIGH, "${2:float}")
+field(LOW,  "${3:float}")
+field(LOLO, "${4:float}")
+field(HHSV, "${5:NO_ALARM }${6:MINOR }${7:MAJOR}")
+field(HSV,  "${8:NO_ALARM }${9:MINOR }${10:MAJOR}")
+field(LSV,  "${11:NO_ALARM }${12:MINOR }${13:MAJOR}")
+field(LLSV, "${14:NO_ALARM }${15:MINOR }${16:MAJOR}")
+field(ZSV,  "${17:NO_ALARM }${18:MINOR }${19:MAJOR}")
+field(OSV,  "${20:NO_ALARM }${21:MINOR }${22:MAJOR}")
+field(COSV, "${23:NO_ALARM }${24:MINOR }${25:MAJOR}")
+field(HYST, "${28:double}")${31}
+endsnippet
+
+snippet record.ai "analog input"
+record(ai, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(DTYP, "${3:Soft Channel }${4:stream}")
+    field(SCAN, "${5:.1 second }${6:1 second }${7:I/O Intr }${8:Event }${9:Passive}")
+    field(INP,  "${10:input link}")
+}${11}
+endsnippet
+
+snippet record.ao "analog output"
+record(ao, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(VAL,  "${3:value}")
+}${4}
+endsnippet
+
+snippet record.bi "binary input"
+record(bi, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(VAL,  "${3:value}")
+    field(ZNAM, "${4:zero_name}")    field(ZSV, "${5:NO_ALARM }${6:MINOR }${7:MAJOR }")
+    field(ONAM, "${8:one_name}")     field(OSV, "${9:NO_ALARM }${10:MINOR }${11:MAJOR }")
+    field(INP,  "${12:input link}")
+}${13}
+endsnippet
+
+snippet record.bo "binary output"
+record(bo, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(VAL,  "${3:value}")
+    field(ZNAM, "${4:zero_name}")    field(ZSV, "${5:NO_ALARM }${6:MINOR }${7:MAJOR }")
+    field(ONAM, "${8:one_name}")     field(OSV, "${9:NO_ALARM }${10:MINOR }${11:MAJOR }")
+    field(HIGH, "${12:seconds_to_hold_high_state}")
+    field(OUT,  "${13:output link}")
+}${14}
+endsnippet
+
+snippet record.calc "calculation"
+record(calc, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(CALC, "${3:a+b}")
+    field(INPA, "${4:record_name}")
+    field(INPB, "${5:record_name}")
+}${6}
+endsnippet
+
+snippet record.calcout "calculation output"
+record(calcout, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(CALC, "${3:a+b}")
+    field(INPA, "${4:record_name}")
+    field(INPB, "${5:record_name}")
+    field(OUT,  "${6:record_name}")
+}${7}
+endsnippet
+
+snippet field.cosv "cosv alarm severity field"
+field(COSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR }")${4}
+endsnippet
+
+snippet record.dfanout "data fanout"
+record(dfanout, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(OUTA, "${3:record_name}")
+    field(OUTB, "${4:record_name}")
+    field(DOL,  "${5:record_name}")
+    field(OMSL, "${6:supervisory }${7:closed_loop}")
+}${8}
+endsnippet
+
+snippet field.desc "description field"
+field(DESC, "${1:description}")${2}
+endsnippet
+
+snippet field.dol "dol field"
+field(DOL, "${1:record_name}")${2}
+endsnippet
+
+snippet field.dtyp "dtyp field"
+field(DTYP, "${1:Soft Channel }${2:stream}")${3}
+endsnippet
+
+snippet field.egu "engineering units field"
+field(EGU, "${1:unit}")${2}
+endsnippet
+
+snippet record.fanout "fanout"
+record(fanout, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(SELM, "${3:All }${4:Specified }${5:Mask}")
+    field(SELN, "${6:1}")
+    field(SELL, "${7:record_name}")
+    field(LNK1, "${8:record_name}")
+    field(LNK2, "${9:record_name}")
+}${10}
+endsnippet
+
+snippet field.fwd "fwd link field"
+field(FLNK, "${1:record_name}")${2}
+endsnippet
+
+snippet field.field "generic field"
+field(${1:field_type}, "${2:field_value}")${3}
+endsnippet
+
+snippet field.high "high alarm limit field"
+field(HIGH, "${1:float}")${2}
+endsnippet
+
+snippet field.hsv "high alarm severity field"
+field(HSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${4}
+endsnippet
+
+snippet field.hihi "hihi alarm limit field"
+field(HIHI, "${1:float}")${2}
+endsnippet
+
+snippet field.hhsv "hihi alarm severity field"
+field(HHSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${4}
+endsnippet
+
+snippet field.inp "input link field"
+field(INP, "${1:record_name}")${2}
+endsnippet
+
+snippet field.lolo "lolo alarm limit field"
+field(LOLO, "${1:float}")${2}
+endsnippet
+
+snippet field.llsv "lolo alarm severity field"
+field(LLSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR }")${4}
+endsnippet
+
+snippet field.low "low alarm limit field"
+field(LOW, "${1:float}")${2}
+endsnippet
+
+snippet field.lsv "low alarm severity field"
+field(LSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${4}
+endsnippet
+
+snippet macro "macro"
+\${${1:MACRO}\}${2}
+endsnippet
+
+snippet record.mbbi "mbbi"
+record(mbbi, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(INP,  "${03:input_link}")
+    field(ZRST, "${04:zero_string}")        field(ZRVL, "${05:zero_value}")
+    field(ONST, "${06:one_string}")         field(ONVL, "${07:one_value}")
+    field(TWST, "${08:two_string}")         field(TWVL, "${09:two_value}")
+    field(THST, "${10:three_string}")       field(THVL, "${11:three_value}")
+    field(FRST, "${12:four_string}")        field(FRVL, "${13:four_value}")
+    field(FVST, "${14:five_string}")        field(FVVL, "${15:five_value}")
+    field(SXST, "${16:six_string}")         field(SXVL, "${17:six_value}")
+    field(SVST, "${18:seven_string}")       field(SVVL, "${19:seven_value}")
+    field(EIST, "${20:height_string}")      field(EIVL, "${21:heigt_value}")
+    field(NIST, "${22:nine_string}")        field(NIVL, "${23:nine_value}")
+    field(TEST, "${24:ten_string}")         field(TEVL, "${25:ten_value}")
+    field(ELST, "${26:eleven_string}")      field(ELVL, "${27:eleven_value}")
+    field(TVST, "${28:twelve_string}")      field(TVVL, "${29:twelve_value}")
+    field(TTST, "${30:thirteen_string}")    field(TTVL, "${31:thirteen_value}")
+    field(FTST, "${32:fourteen_string}")    field(FTVL, "${33:fourteen_value}")
+    field(FFST, "${34:fifteen_string}")     field(FFVL, "${35:fifteen_value}")
+}${36}
+endsnippet
+
+snippet record.mbbiDirect "mbbiDirect"
+record(mbbiDirect, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(INP,  "${3:input_link}")
+    field(B0,   "${04:bit_0_value}")
+    field(B1,   "${05:bit_1_value}")
+    field(B2,   "${06:bit_2_value}")
+    field(B3,   "${07:bit_3_value}")
+    field(B4,   "${08:bit_4_value}")
+    field(B5,   "${09:bit_5_value}")
+    field(B6,   "${10:bit_6_value}")
+    field(B7,   "${11:bit_7_value}")
+    field(B8,   "${12:bit_8_value}")
+    field(B9,   "${13:bit_9_value}")
+    field(BA,   "${14:bit_10_value}")
+    field(BB,   "${15:bit_11_value}")
+    field(BC,   "${16:bit_12_value}")
+    field(BD,   "${17:bit_13_value}")
+    field(BE,   "${18:bit_14_value}")
+    field(BF,   "${19:bit_15_value}")
+}${20}
+endsnippet
+
+snippet record.mbbo "mbbo"
+record(mbbo, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(OUT,  "${3:output_link}")
+    field(ZRST, "${04:zero_string}")        field(ZRVL, "${05:zero_value}")
+    field(ONST, "${06:one_string}")         field(ONVL, "${07:one_value}")
+    field(TWST, "${08:two_string}")         field(TWVL, "${09:two_value}")
+    field(THST, "${10:three_string}")       field(THVL, "${11:three_value}")
+    field(FRST, "${12:four_string}")        field(FRVL, "${13:four_value}")
+    field(FVST, "${14:five_string}")        field(FVVL, "${15:five_value}")
+    field(SXST, "${16:six_string}")         field(SXVL, "${17:six_value}")
+    field(SVST, "${18:seven_string}")       field(SVVL, "${19:seven_value}")
+    field(EIST, "${20:height_string}")      field(EIVL, "${21:heigt_value}")
+    field(NIST, "${22:nine_string}")        field(NIVL, "${23:nine_value}")
+    field(TEST, "${24:ten_string}")         field(TEVL, "${25:ten_value}")
+    field(ELST, "${26:eleven_string}")      field(ELVL, "${27:eleven_value}")
+    field(TVST, "${28:twelve_string}")      field(TVVL, "${29:twelve_value}")
+    field(TTST, "${30:thirteen_string}")    field(TTVL, "${31:thirteen_value}")
+    field(FTST, "${32:fourteen_string}")    field(FTVL, "${33:fourteen_value}")
+    field(FFST, "${34:fifteen_string}")     field(FFVL, "${35:fifteen_value}")
+}${36}
+endsnippet
+
+snippet record.mbboDirect "mbboDirect"
+record(mbboDirect, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(OUT,  "${3:output_link}")
+    field(B0,   "${04:bit_0_value}")
+    field(B1,   "${05:bit_1_value}")
+    field(B2,   "${06:bit_2_value}")
+    field(B3,   "${07:bit_3_value}")
+    field(B4,   "${08:bit_4_value}")
+    field(B5,   "${09:bit_5_value}")
+    field(B6,   "${10:bit_6_value}")
+    field(B7,   "${11:bit_7_value}")
+    field(B8,   "${12:bit_8_value}")
+    field(B9,   "${13:bit_9_value}")
+    field(BA,   "${14:bit_10_value}")
+    field(BB,   "${15:bit_11_value}")
+    field(BC,   "${16:bit_12_value}")
+    field(BD,   "${17:bit_13_value}")
+    field(BE,   "${18:bit_14_value}")
+    field(BF,   "${19:bit_15_value}")
+}${20}
+endsnippet
+
+snippet field.omsl "omsl field"
+field(OMSL, "${1:Supervisory }${2:closed_loop}")${3}
+endsnippet
+
+snippet field.osv "osv alarm severity field"
+field(OSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR }")${4}
+endsnippet
+
+snippet field.out "output link field"
+field(OUT, "${1:record_name}")${2}
+endsnippet
+
+snippet field.pini "pini field"
+field(PINI, "${1:YES }${2:NO}")${3}
+endsnippet
+
+snippet field.prec "precision field"
+field(PREC, "${1:precision}")${2}
+endsnippet
+
+snippet field.scan "scan field"
+field(SCAN, "${1:.1 second }${2:.2 second }${3:1 second }${4:10 second }${5:I/O Intr }${6:Event }${7:Passive}")${8}
+endsnippet
+
+snippet record.sel "select"
+record(sel, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(SELM, "${3:All }${4:Specified }${5:Mask}")
+    field(SELN, "${6:1}")
+    field(SELL, "${7:record_name}")
+    field(INPA, "${8:record_name}")
+    field(INPB, "${9:record_name}")
+    field(INPC, "${10:record_name}")
+}${11}
+endsnippet
+
+snippet field.selm "selection mechanism field"
+field(SELM, "${1:All }${2:Specified }${3:Mask}")${4}
+endsnippet
+
+snippet record.seq "sequence"
+record(seq, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(SELM, "${3:All }${4:Specified }${5:Mask}")
+    field(SELN, "${6:1}")
+    field(SELL, "${7:record_name}")
+    field(DLY1, "${8:double}")
+    field(DOL1, "${9:record_name}")
+    field(LNK1, "${10:record_name}")
+    field(DLY2, "${11:double}")
+    field(DOL2, "${12:record_name}")
+    field(LNK2, "${13:record_name}")
+}${14}
+endsnippet
+
+snippet record.stringin "stringin"
+record(stringin, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(DTYP, "${3:Soft Channel }${4:stream}")
+    field(INP,  "${5:input_link}")
+}${6}
+endsnippet
+
+snippet record.stringout "stringout"
+record(stringout, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(OUT,  "${3:output_link}")
+}${4}
+endsnippet
+
+snippet field.val "value field"
+field(VAL, "${1:value}")${2}
+endsnippet
+
+snippet record.waveform "waveform"
+record(waveform, "${1:record_name}") {
+    field(DESC, "${2:description}")
+    field(NELM, "${3:256}")
+    field(FTVL, "${4:FLOAT}")
+}${5}
+endsnippet
+
+snippet field.zsv "zsv alarm severity field"
+field(ZSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR }")${4}
+endsnippet
+
+# Autoconverted from visual studio code
+
+snippet device "device"
+# Devices
+device(${1:<record_type>}, ${2:<link_type>}, ${3:<dset_name>}, "${4:<choice_string>}")
+endsnippet
+
+snippet driver "driver"
+# Drivers
+driver(${3:<drvet_name>})
+endsnippet
+
+snippet function "function"
+# Functions for sub or gensub records
+function(${1:<integrateWF>})
+endsnippet
+
+snippet include "include"
+# Record types
+include "${1:xxxRecord.dbd}"
+endsnippet
+
+snippet registrar "registrar"
+# SNL programs or functions to be invoked from iocsh
+registrar(${1:<function_name>})
+endsnippet
+
+snippet variable "variable"
+# Variables
+variable(${1:<variable_name>})
+endsnippet
