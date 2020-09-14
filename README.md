@@ -17,6 +17,49 @@ https://github.com/NSenaud/vscode-epics
 
 * caproto PVGroup-related snippets
 
+## (neo)vim Installation
+
+By way of [vim-plug](http://github.com/junegunn/vim-plug/):
+
+```
+call plug#begin('~/.vim/plugged')
+
+" Highlighting + filetype setting
+Plug 'NickeZ/epics.vim'
+
+" Ultisnips + EPICS ultisnips
+Plug 'SirVer/ultisnips'
+Plug 'klauer/epics-ultisnips'
+
+" Optionally grab useful snippets for other file types:
+Plug 'honza/vim-snippets'
+
+call plug#end()
+
+" Configure your expand trigger:
+let g:UltiSnipsExpandTrigger="<c-s>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+```
+
+Then
+
+```
+$ vim test.db
+record.ai<c-s>
+```
+
+Expands to this, where you can use the forward/backward mappings
+(``<c-j>/<c-k>`` above) to change the individual fields:
+
+```
+record(ai, "record_name") {
+    field(DESC, "description")
+    field(DTYP, "Soft Channel stream")
+    field(SCAN, ".1 second 1 second I/O Intr Event Passive")
+    field(INP,  "input link")
+}
+```
 
 ## See also
 
