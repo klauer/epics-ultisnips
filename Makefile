@@ -19,5 +19,7 @@ convert:
 	$(CONVERT) $(SOURCE_SNIPPETS)/startup.json > $(DEST_SNIPPETS)/startup.snippets
 	$(CONVERT) $(SOURCE_SNIPPETS)/substitutions.json > $(DEST_SNIPPETS)/substitutions.snippets
 
+update:
+	cd vscode-epics && git pull --ff-only origin master
 
 .PHONY: rebuild clone
