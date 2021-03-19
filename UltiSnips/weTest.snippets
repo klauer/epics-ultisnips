@@ -15,20 +15,20 @@ commands:
     ignore:        False True
     skip:          False True
     on_failure:    continue pause abort
-    retry:         5
+    retry:         5${0}
 endsnippet
 
 snippet scenario.config "scenario config"
 config:
-  name:        ${1:my_scenario_name}
-  type:        ${2:unit} ${3:functional}
+  name:        ${1:my_scenario_name} 
+  type:        ${2:unit} ${3:functional} 
   prefix:      ${4:CEA-01:}  # PV prefix
-  use_prefix:  ${5:False} ${6:True}
+  use_prefix:  ${5:False} ${6:True} 
   delay:       ${7:1} # sec
-  ignore:      ${8:False} ${9:True}
-  skip:        ${10:False} ${11:True}
-  on_failure:  ${12:continue} ${13:pause} ${14:abort}
-  retry:       ${15:5}
+  ignore:      ${8:False} ${9:True} 
+  skip:        ${10:False} ${11:True} 
+  on_failure:  ${12:continue} ${13:pause} ${14:abort} 
+  retry:       ${15:5}${0}
 endsnippet
 
 snippet scenario.include "scenario include"
@@ -40,17 +40,17 @@ include:
    # with macro on several lines
    - path: myScript.yaml
      MACRO1: 'MY_MACRO1'
-     MACRO2: 'MY_MACRO2'
+     MACRO2: 'MY_MACRO2'${0}
 endsnippet
 
 snippet scenario.macros "scenario macros"
 macros:
   - MACRO1: MY_MACRO1
-    MACRO2: MY_MACRO2
+    MACRO2: MY_MACRO2${0}
 endsnippet
 
 snippet scenario.name "scenario name"
-name: ${1:MY_SCENARIO_NAME}
+name: ${1:MY_SCENARIO_NAME}${0}
 endsnippet
 
 snippet scenario.tests "scenario tests"
@@ -115,38 +115,39 @@ tests:
     ignore:        False True
     skip:          False True
     on_failure:    continue pause abort
-    retry:         0
+    retry:         0${0}
 endsnippet
 
 snippet scenario.version "scenario version"
-version: {major: ${1:1}, minor: ${2:2}, bugfix: ${3:0}}
+version: {major: ${1:1}, minor: ${2:2}, bugfix: ${3:0}}${0}
 endsnippet
 
 snippet unit.limits "unit limits"
-  - name:      ${1:limits of power supply voltage}
-    setter:    ${2:USet}
-    getter:    ${3:UMes}
+  - name:      ${1:limits of power supply voltage} 
+    setter:    ${2:USet} 
+    getter:    ${3:UMes} 
     margin:    ${4:0} # %
     commands:
-      - name:      ${5:min limit}
+      - name:      ${5:min limit} 
         set_value: ${6:-1}
         get_value: ${7:0}
-      - name:      ${8:max limit}
+      - name:      ${8:max limit} 
         set_value: ${9:11}
         get_value: ${10:10}
     finally:
-      value:       ${11:0} # %
+      value:       ${11:0} # %${0}
 endsnippet
 
 snippet unit.range "unit range"
-  - name:      ${1:range of power supply voltage}
-    setter:    ${2:USet}
-    getter:    ${3:UMes}
+  - name:      ${1:range of power supply voltage} 
+    setter:    ${2:USet} 
+    getter:    ${3:UMes} 
     margin:    ${4:0} # %
     range:
       start:   ${5:0}
       stop:    ${6:10}
       step:    ${7:1}
     finally:
-      value:   ${8:0} # %
+      value:   ${8:0} # %${0}
 endsnippet
+

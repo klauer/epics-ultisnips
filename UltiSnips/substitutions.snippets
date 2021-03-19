@@ -1,9 +1,26 @@
 # Autoconverted from visual studio code
 
-snippet epics.substitutions.file "include"
+snippet header "header"
+# file: ${1:file_name}.${2:substitutions}
+# description: ${3:this file is doing that ...}
+# author: ${4:victor.nadot@cea.fr}
+# company: ${5:CEA / DRF / IRFU / LDISC}
+# macros:
+# ${6:P : ${P=CEA:}}${0}
+endsnippet
+
+snippet substitutions.file "include"
+file db/myDBfile.template {
+    { P=xxx, Y=yyy}
+    { P=aaa, Y=bbb}
+}${0}
+endsnippet
+
+snippet substitutions.file.pattern "include-pattern"
 file db/myDBfile.template {
     pattern { PREFIX,     SCAN }
             { ${ PREFIX } "1 second"}
             { ${ PREFIX } "3 second"}
-}
+}${0}
 endsnippet
+

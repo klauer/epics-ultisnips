@@ -1,17 +1,18 @@
 # Autoconverted from visual studio code
 
 snippet dbLoadRecords "dbLoadRecords"
-dbLoadRecords(${1:file})${3}
+dbLoadRecords("${1:file}.${2|template,db|}", "${3:P=$(P=CEA:)}, ${4:R=$(P=LAB:)}")${0}
 endsnippet
 
 snippet dbLoadTemplate "dbLoadTemplate"
-dbLoadTemplate(${1:file})${3}
+dbLoadTemplate("${1:file.substitutions}", "${3:P=$(P=CEA:)}, ${4:R=$(P=LAB:)}")${0}
 endsnippet
 
 snippet epicsEnvSet "epicsEnvSet"
-epicsEnvSet(${1:MACRO}, "${2:MACRO_VALUE}")${3}
+epicsEnvSet(${1:MACRO}, "$(${1:MACRO}=${2:MACRO_VALUE})")${0}
 endsnippet
 
 snippet require "require"
-require	${1:module}, ${2:version}${3}
+require	${1:module}, ${2:version}${0}
 endsnippet
+

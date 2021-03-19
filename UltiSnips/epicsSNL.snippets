@@ -1,15 +1,15 @@
 # Autoconverted from visual studio code
 
 snippet pvAssign "SNL pvAssign"
-pvAssign(${1:pv_variable}, "${2:pv_name}")
+pvAssign(${1:pv_variable}, "${2:pv_name}")${0}
 endsnippet
 
 snippet pvGet "SNL pvGet"
-pvGet(${1:pv_variable});
+pvGet(${1:pv_variable});${0}
 endsnippet
 
 snippet pvPut "SNL pvPut"
-pvPut(${1:pv_variable});
+pvPut(${1:pv_variable});${0}
 endsnippet
 
 snippet state "SNL state"
@@ -22,5 +22,6 @@ ss ${1:state_machine_name} {
         when (${5:condition1}) {
         } state ${4:state1}
     }
-}
+${0}}
 endsnippet
+

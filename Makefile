@@ -21,5 +21,6 @@ convert:
 
 update:
 	cd vscode-epics && git pull --ff-only origin master
+	git commit -m "Updated vscode-epics" vscode-epics
 
 .PHONY: rebuild clone

@@ -3,7 +3,7 @@
 snippet record.record "Record Body"
 record(${1:record_type}, "${2:record_name}") {
     ${3}
-}${4}
+}${0}
 endsnippet
 
 snippet record.asub "aSub Record"
@@ -16,11 +16,11 @@ record(aSub, "${1:record_name}") {
     field(OUTA, "${16:record_name}")
     field(FTVA, "${17:STRING }${18:CHAR }${19:UCHAR }${20:SHORT }${21:USHORT }${22:LONG }${23:ULONG }${24:FLOAT }${25:DOUBLE }${26:ENUM}")
     field(NOVA, "${27:number_of_element}")
-}${28}
+}${0}
 endsnippet
 
 snippet field.hyst "alarm deadband field"
-field(HYST, "${1:double}")${2}
+field(HYST, "${1:double}")${0}
 endsnippet
 
 snippet field.alarms "all alarms field"
@@ -35,7 +35,7 @@ field(LLSV, "${14:NO_ALARM }${15:MINOR }${16:MAJOR}")
 field(ZSV,  "${17:NO_ALARM }${18:MINOR }${19:MAJOR}")
 field(OSV,  "${20:NO_ALARM }${21:MINOR }${22:MAJOR}")
 field(COSV, "${23:NO_ALARM }${24:MINOR }${25:MAJOR}")
-field(HYST, "${28:double}")${31}
+field(HYST, "${28:double}")${0}
 endsnippet
 
 snippet record.ai "analog input"
@@ -44,35 +44,39 @@ record(ai, "${1:record_name}") {
     field(DTYP, "${3:Soft Channel }${4:stream}")
     field(SCAN, "${5:.1 second }${6:1 second }${7:I/O Intr }${8:Event }${9:Passive}")
     field(INP,  "${10:input link}")
-}${11}
+}${0}
 endsnippet
 
 snippet record.ao "analog output"
 record(ao, "${1:record_name}") {
     field(DESC, "${2:description}")
-    field(VAL,  "${3:value}")
-}${4}
+    field(PREC, "${3:3}")
+    field(EGU,  "${4:Volts}")
+    field(DRVL, "${5:-10}")
+    field(DRVH, "${6:+10}")
+    field(VAL,  "${7:0.000}")
+}${0}
 endsnippet
 
 snippet record.bi "binary input"
 record(bi, "${1:record_name}") {
     field(DESC, "${2:description}")
     field(VAL,  "${3:value}")
-    field(ZNAM, "${4:zero_name}")    field(ZSV, "${5:NO_ALARM }${6:MINOR }${7:MAJOR }")
-    field(ONAM, "${8:one_name}")     field(OSV, "${9:NO_ALARM }${10:MINOR }${11:MAJOR }")
+    field(ZNAM, "${4:zero_name}")    field(ZSV, "${5:NO_ALARM }${6:MINOR }${7:MAJOR}")
+    field(ONAM, "${8:one_name}")     field(OSV, "${9:NO_ALARM }${10:MINOR }${11:MAJOR}")
     field(INP,  "${12:input link}")
-}${13}
+}${0}
 endsnippet
 
 snippet record.bo "binary output"
 record(bo, "${1:record_name}") {
     field(DESC, "${2:description}")
     field(VAL,  "${3:value}")
-    field(ZNAM, "${4:zero_name}")    field(ZSV, "${5:NO_ALARM }${6:MINOR }${7:MAJOR }")
-    field(ONAM, "${8:one_name}")     field(OSV, "${9:NO_ALARM }${10:MINOR }${11:MAJOR }")
+    field(ZNAM, "${4:zero_name}")    field(ZSV, "${5:NO_ALARM }${6:MINOR }${7:MAJOR}")
+    field(ONAM, "${8:one_name}")     field(OSV, "${9:NO_ALARM }${10:MINOR }${11:MAJOR}")
     field(HIGH, "${12:seconds_to_hold_high_state}")
     field(OUT,  "${13:output link}")
-}${14}
+}${0}
 endsnippet
 
 snippet record.calc "calculation"
@@ -81,7 +85,7 @@ record(calc, "${1:record_name}") {
     field(CALC, "${3:a+b}")
     field(INPA, "${4:record_name}")
     field(INPB, "${5:record_name}")
-}${6}
+}${0}
 endsnippet
 
 snippet record.calcout "calculation output"
@@ -91,11 +95,11 @@ record(calcout, "${1:record_name}") {
     field(INPA, "${4:record_name}")
     field(INPB, "${5:record_name}")
     field(OUT,  "${6:record_name}")
-}${7}
+}${0}
 endsnippet
 
 snippet field.cosv "cosv alarm severity field"
-field(COSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR }")${4}
+field(COSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${0}
 endsnippet
 
 snippet record.dfanout "data fanout"
@@ -105,23 +109,23 @@ record(dfanout, "${1:record_name}") {
     field(OUTB, "${4:record_name}")
     field(DOL,  "${5:record_name}")
     field(OMSL, "${6:supervisory }${7:closed_loop}")
-}${8}
+}${0}
 endsnippet
 
 snippet field.desc "description field"
-field(DESC, "${1:description}")${2}
+field(DESC, "${1:description}")${0}
 endsnippet
 
 snippet field.dol "dol field"
-field(DOL, "${1:record_name}")${2}
+field(DOL, "${1:record_name}")${0}
 endsnippet
 
 snippet field.dtyp "dtyp field"
-field(DTYP, "${1:Soft Channel }${2:stream}")${3}
+field(DTYP, "${1:Soft Channel }${2:stream}")${0}
 endsnippet
 
 snippet field.egu "engineering units field"
-field(EGU, "${1:unit}")${2}
+field(EGU, "${1:unit}")${0}
 endsnippet
 
 snippet record.fanout "fanout"
@@ -132,55 +136,64 @@ record(fanout, "${1:record_name}") {
     field(SELL, "${7:record_name}")
     field(LNK1, "${8:record_name}")
     field(LNK2, "${9:record_name}")
-}${10}
+}${0}
 endsnippet
 
 snippet field.fwd "fwd link field"
-field(FLNK, "${1:record_name}")${2}
+field(FLNK, "${1:record_name}")${0}
 endsnippet
 
 snippet field.field "generic field"
-field(${1:field_type}, "${2:field_value}")${3}
+field(${1:field_type}, "${2:field_value}")${0}
+endsnippet
+
+snippet header "header"
+# file: ${1:file_name}.${2:template}
+# description: ${3:this file is doing that ...}
+# author: ${4:victor.nadot@cea.fr}
+# company: ${5:CEA / DRF / IRFU / LDISC}
+# macros:
+# ${6:P : ${P=CEA:}}${0}
 endsnippet
 
 snippet field.high "high alarm limit field"
-field(HIGH, "${1:float}")${2}
+field(HIGH, "${1:float}")${0}
 endsnippet
 
 snippet field.hsv "high alarm severity field"
-field(HSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${4}
+field(HSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${0}
 endsnippet
 
 snippet field.hihi "hihi alarm limit field"
-field(HIHI, "${1:float}")${2}
+field(HIHI, "${1:float}")${0}
 endsnippet
 
 snippet field.hhsv "hihi alarm severity field"
-field(HHSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${4}
+field(HHSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${0}
 endsnippet
 
 snippet field.inp "input link field"
-field(INP, "${1:record_name}")${2}
+field(INP, "${1:record_name}")${0}
 endsnippet
 
 snippet field.lolo "lolo alarm limit field"
-field(LOLO, "${1:float}")${2}
+field(LOLO, "${1:float}")${0}
 endsnippet
 
 snippet field.llsv "lolo alarm severity field"
-field(LLSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR }")${4}
+field(LLSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${0}
 endsnippet
 
 snippet field.low "low alarm limit field"
-field(LOW, "${1:float}")${2}
+field(LOW, "${1:float}")${0}
 endsnippet
 
 snippet field.lsv "low alarm severity field"
-field(LSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${4}
+field(LSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${0}
 endsnippet
 
 snippet macro "macro"
-\${${1:MACRO}\}${2}
+\${${1:MACRO}\}${0}
 endsnippet
 
 snippet record.mbbi "mbbi"
@@ -203,7 +216,7 @@ record(mbbi, "${1:record_name}") {
     field(TTST, "${30:thirteen_string}")    field(TTVL, "${31:thirteen_value}")
     field(FTST, "${32:fourteen_string}")    field(FTVL, "${33:fourteen_value}")
     field(FFST, "${34:fifteen_string}")     field(FFVL, "${35:fifteen_value}")
-}${36}
+}${0}
 endsnippet
 
 snippet record.mbbiDirect "mbbiDirect"
@@ -226,7 +239,7 @@ record(mbbiDirect, "${1:record_name}") {
     field(BD,   "${17:bit_13_value}")
     field(BE,   "${18:bit_14_value}")
     field(BF,   "${19:bit_15_value}")
-}${20}
+}${0}
 endsnippet
 
 snippet record.mbbo "mbbo"
@@ -249,7 +262,7 @@ record(mbbo, "${1:record_name}") {
     field(TTST, "${30:thirteen_string}")    field(TTVL, "${31:thirteen_value}")
     field(FTST, "${32:fourteen_string}")    field(FTVL, "${33:fourteen_value}")
     field(FFST, "${34:fifteen_string}")     field(FFVL, "${35:fifteen_value}")
-}${36}
+}${0}
 endsnippet
 
 snippet record.mbboDirect "mbboDirect"
@@ -272,31 +285,31 @@ record(mbboDirect, "${1:record_name}") {
     field(BD,   "${17:bit_13_value}")
     field(BE,   "${18:bit_14_value}")
     field(BF,   "${19:bit_15_value}")
-}${20}
+}${0}
 endsnippet
 
 snippet field.omsl "omsl field"
-field(OMSL, "${1:Supervisory }${2:closed_loop}")${3}
+field(OMSL, "${1:Supervisory }${2:closed_loop}")${0}
 endsnippet
 
 snippet field.osv "osv alarm severity field"
-field(OSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR }")${4}
+field(OSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${0}
 endsnippet
 
 snippet field.out "output link field"
-field(OUT, "${1:record_name}")${2}
+field(OUT, "${1:record_name}")${0}
 endsnippet
 
 snippet field.pini "pini field"
-field(PINI, "${1:YES }${2:NO}")${3}
+field(PINI, "${1:YES }${2:NO}")${0}
 endsnippet
 
 snippet field.prec "precision field"
-field(PREC, "${1:precision}")${2}
+field(PREC, "${1:precision}")${0}
 endsnippet
 
 snippet field.scan "scan field"
-field(SCAN, "${1:.1 second }${2:.2 second }${3:1 second }${4:10 second }${5:I/O Intr }${6:Event }${7:Passive}")${8}
+field(SCAN, "${1:.1 second }${2:.2 second }${3:1 second }${4:10 second }${5:I/O Intr }${6:Event }${7:Passive}")${0}
 endsnippet
 
 snippet record.sel "select"
@@ -308,11 +321,11 @@ record(sel, "${1:record_name}") {
     field(INPA, "${8:record_name}")
     field(INPB, "${9:record_name}")
     field(INPC, "${10:record_name}")
-}${11}
+}${0}
 endsnippet
 
 snippet field.selm "selection mechanism field"
-field(SELM, "${1:All }${2:Specified }${3:Mask}")${4}
+field(SELM, "${1:All }${2:Specified }${3:Mask}")${0}
 endsnippet
 
 snippet record.seq "sequence"
@@ -327,7 +340,7 @@ record(seq, "${1:record_name}") {
     field(DLY2, "${11:double}")
     field(DOL2, "${12:record_name}")
     field(LNK2, "${13:record_name}")
-}${14}
+}${0}
 endsnippet
 
 snippet record.stringin "stringin"
@@ -335,18 +348,18 @@ record(stringin, "${1:record_name}") {
     field(DESC, "${2:description}")
     field(DTYP, "${3:Soft Channel }${4:stream}")
     field(INP,  "${5:input_link}")
-}${6}
+}${0}
 endsnippet
 
 snippet record.stringout "stringout"
 record(stringout, "${1:record_name}") {
     field(DESC, "${2:description}")
     field(OUT,  "${3:output_link}")
-}${4}
+}${0}
 endsnippet
 
 snippet field.val "value field"
-field(VAL, "${1:value}")${2}
+field(VAL, "${1:value}")${0}
 endsnippet
 
 snippet record.waveform "waveform"
@@ -354,41 +367,42 @@ record(waveform, "${1:record_name}") {
     field(DESC, "${2:description}")
     field(NELM, "${3:256}")
     field(FTVL, "${4:FLOAT}")
-}${5}
+}${0}
 endsnippet
 
 snippet field.zsv "zsv alarm severity field"
-field(ZSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR }")${4}
+field(ZSV, "${1:NO_ALARM }${2:MINOR }${3:MAJOR}")${0}
 endsnippet
 
 # Autoconverted from visual studio code
 
 snippet device "device"
 # Devices
-device(${1:<record_type>}, ${2:<link_type>}, ${3:<dset_name>}, "${4:<choice_string>}")
+device(${1:<record_type>}, ${2:<link_type>}, ${3:<dset_name>}, "${4:<choice_string>}")${0}
 endsnippet
 
 snippet driver "driver"
 # Drivers
-driver(${3:<drvet_name>})
+driver(${3:<drvet_name>})${0}
 endsnippet
 
 snippet function "function"
 # Functions for sub or gensub records
-function(${1:<integrateWF>})
+function(${1:<integrateWF>})${0}
 endsnippet
 
 snippet include "include"
 # Record types
-include "${1:xxxRecord.dbd}"
+include "${1:xxxRecord.dbd}"${0}
 endsnippet
 
 snippet registrar "registrar"
 # SNL programs or functions to be invoked from iocsh
-registrar(${1:<function_name>})
+registrar(${1:<function_name>})${0}
 endsnippet
 
 snippet variable "variable"
 # Variables
-variable(${1:<variable_name>})
+variable(${1:<variable_name>})${0}
 endsnippet
+
